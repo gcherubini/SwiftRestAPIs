@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		79245DFB21A63FD30044416A /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79245DFA21A63FD30044416A /* HTTPStatusCode.swift */; };
 		79245E1121A64D9B0044416A /* GithubAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79245E1021A64D9B0044416A /* GithubAPIEndpoint.swift */; };
-		7935CF9D21A6E73D0031B58F /* GithubMoya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935CF9C21A6E73D0031B58F /* GithubMoya.swift */; };
+		792C1C9121AC975A00F19ECF /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C1C7B21AC975A00F19ECF /* Moya.framework */; };
+		792C1C9221AC975A00F19ECF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C1C9021AC975A00F19ECF /* Alamofire.framework */; };
+		792C1C9421AC998700F19ECF /* GithubMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792C1C9321AC998700F19ECF /* GithubMoyaProvider.swift */; };
+		792C1C9821AC9EFA00F19ECF /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C1C9721AC9EFA00F19ECF /* Result.framework */; };
+		7935CF9D21A6E73D0031B58F /* GithubMoyaTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935CF9C21A6E73D0031B58F /* GithubMoyaTarget.swift */; };
 		793AEB2F208A674A006890ED /* FeatureCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */; };
 		7956F17F2177B9D30060EC06 /* CoordinatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7956F17E2177B9D30060EC06 /* CoordinatorMock.swift */; };
 		7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964142E20629D7E00C9748D /* FirstViewPresenter.swift */; };
@@ -186,7 +190,11 @@
 /* Begin PBXFileReference section */
 		79245DFA21A63FD30044416A /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		79245E1021A64D9B0044416A /* GithubAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIEndpoint.swift; sourceTree = "<group>"; };
-		7935CF9C21A6E73D0031B58F /* GithubMoya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubMoya.swift; sourceTree = "<group>"; };
+		792C1C7B21AC975A00F19ECF /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		792C1C9021AC975A00F19ECF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		792C1C9321AC998700F19ECF /* GithubMoyaProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubMoyaProvider.swift; sourceTree = "<group>"; };
+		792C1C9721AC9EFA00F19ECF /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7935CF9C21A6E73D0031B58F /* GithubMoyaTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubMoyaTarget.swift; sourceTree = "<group>"; };
 		793AEB2E208A674A006890ED /* FeatureCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCoordinatorTest.swift; sourceTree = "<group>"; };
 		7956F17E2177B9D30060EC06 /* CoordinatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorMock.swift; sourceTree = "<group>"; };
 		7964142E20629D7E00C9748D /* FirstViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewPresenter.swift; sourceTree = "<group>"; };
@@ -228,6 +236,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792C1C9821AC9EFA00F19ECF /* Result.framework in Frameworks */,
+				792C1C9121AC975A00F19ECF /* Moya.framework in Frameworks */,
+				792C1C9221AC975A00F19ECF /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +264,8 @@
 		790DDF8D21A6E51B0056B4CD /* moya */ = {
 			isa = PBXGroup;
 			children = (
-				7935CF9C21A6E73D0031B58F /* GithubMoya.swift */,
+				792C1C9321AC998700F19ECF /* GithubMoyaProvider.swift */,
+				7935CF9C21A6E73D0031B58F /* GithubMoyaTarget.swift */,
 			);
 			path = moya;
 			sourceTree = "<group>";
@@ -443,6 +455,9 @@
 		79D340EA2061B9F0002B1B43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				792C1C9721AC9EFA00F19ECF /* Result.framework */,
+				792C1C9021AC975A00F19ECF /* Alamofire.framework */,
+				792C1C7B21AC975A00F19ECF /* Moya.framework */,
 				79D341142061BA0F002B1B43 /* Nimble.xcodeproj */,
 				79D340EB2061B9F1002B1B43 /* Quick.xcodeproj */,
 			);
@@ -535,6 +550,8 @@
 				796ED97720618D4D0041A4BE /* Sources */,
 				796ED97820618D4D0041A4BE /* Frameworks */,
 				796ED97920618D4D0041A4BE /* Resources */,
+				792C1C9521AC9C4300F19ECF /* ShellScript */,
+				792C1C9621AC9D3500F19ECF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -793,6 +810,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		792C1C9521AC9C4300F19ECF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		792C1C9621AC9D3500F19ECF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		796ED97720618D4D0041A4BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -801,8 +861,9 @@
 				798159E72087B29A00CBF8A2 /* ViewControllerExtensions.swift in Sources */,
 				79BD22EC206296F200B1E39C /* SecondViewController.swift in Sources */,
 				7964F74421A5AE29004E2C94 /* UrlSessionGithubService.swift in Sources */,
+				792C1C9421AC998700F19ECF /* GithubMoyaProvider.swift in Sources */,
 				79245E1121A64D9B0044416A /* GithubAPIEndpoint.swift in Sources */,
-				7935CF9D21A6E73D0031B58F /* GithubMoya.swift in Sources */,
+				7935CF9D21A6E73D0031B58F /* GithubMoyaTarget.swift in Sources */,
 				798159CE2086B28E00CBF8A2 /* PersistenceService.swift in Sources */,
 				7964F74621A5B354004E2C94 /* RepositoryOutput.swift in Sources */,
 				79E0D4A72086AA9600C7B804 /* FeatureCoordinator.swift in Sources */,
@@ -988,6 +1049,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.app;
@@ -1002,6 +1067,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.app;

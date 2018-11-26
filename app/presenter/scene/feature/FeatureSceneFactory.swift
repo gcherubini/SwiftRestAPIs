@@ -13,8 +13,9 @@ struct FeatureSceneFactory {
     static func makeSecondScene(userName: String?) -> SecondViewController {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
 				let githubApi = UrlSessionGithubService()
+				let githubMoyaProvider = GithubMoyaProvider()
         let persistence = PersistenceService()
-				let presenter = SecondViewPresenter(githubApi: githubApi, persistence: persistence, view: viewController, nameFromParam: userName)
+				let presenter = SecondViewPresenter(githubApi: githubApi, githubMoyaProvider: githubMoyaProvider, persistence: persistence, view: viewController, nameFromParam: userName)
         viewController.presenter = presenter
         return viewController
     }
