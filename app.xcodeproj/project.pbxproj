@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7917941021C6AFDF00298002 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7917940F21C6AFDF00298002 /* SecondView.swift */; };
+		7917942621C6B15500298002 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7917942521C6B15500298002 /* SecondView.xib */; };
 		79245DFB21A63FD30044416A /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79245DFA21A63FD30044416A /* HTTPStatusCode.swift */; };
 		79245E1121A64D9B0044416A /* GithubAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79245E1021A64D9B0044416A /* GithubAPIEndpoint.swift */; };
 		792C1C9121AC975A00F19ECF /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792C1C7B21AC975A00F19ECF /* Moya.framework */; };
@@ -188,6 +190,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7917940F21C6AFDF00298002 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		7917942521C6B15500298002 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
 		79245DFA21A63FD30044416A /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		79245E1021A64D9B0044416A /* GithubAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIEndpoint.swift; sourceTree = "<group>"; };
 		792C1C7B21AC975A00F19ECF /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 			children = (
 				79BD22EB206296F200B1E39C /* SecondViewController.swift */,
 				798159E82087B4D300CBF8A2 /* SecondViewPresenter.swift */,
+				7917940F21C6AFDF00298002 /* SecondView.swift */,
+				7917942521C6B15500298002 /* SecondView.xib */,
 			);
 			path = second;
 			sourceTree = "<group>";
@@ -790,6 +796,7 @@
 			files = (
 				796ED98920618D4D0041A4BE /* LaunchScreen.storyboard in Resources */,
 				796ED98620618D4D0041A4BE /* Assets.xcassets in Resources */,
+				7917942621C6B15500298002 /* SecondView.xib in Resources */,
 				796ED98420618D4D0041A4BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,6 +877,7 @@
 				796ED98120618D4D0041A4BE /* FirstViewController.swift in Sources */,
 				79E0D4A92086AAC700C7B804 /* FeatureSceneFactory.swift in Sources */,
 				79A9F6D0215D902E00B6929D /* Coordinator.swift in Sources */,
+				7917941021C6AFDF00298002 /* SecondView.swift in Sources */,
 				79245DFB21A63FD30044416A /* HTTPStatusCode.swift in Sources */,
 				796ED97F20618D4D0041A4BE /* AppDelegate.swift in Sources */,
 				7964142F20629D7E00C9748D /* FirstViewPresenter.swift in Sources */,

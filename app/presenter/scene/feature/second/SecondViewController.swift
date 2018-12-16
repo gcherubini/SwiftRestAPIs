@@ -1,7 +1,7 @@
 import UIKit
 
 
-protocol SecondView: class {
+protocol SecondViewDelegate: class {
     func setNameFromParam(_ text: String)
     func setNameFromPersistence(_ text: String)
     func showError(with message: String)
@@ -9,9 +9,8 @@ protocol SecondView: class {
 
 class SecondViewController: UIViewController {
 
-    @IBOutlet weak var nameFromParamLabel: UILabel!
-    @IBOutlet weak var nameFromPersistenceLabel: UILabel!
-    
+	@IBOutlet weak var secondView: SecondView!
+	
     var presenter: SecondViewPresenter!
 
     override func viewDidLoad() {
@@ -20,14 +19,14 @@ class SecondViewController: UIViewController {
     }
 }
 
-extension SecondViewController: SecondView {
+extension SecondViewController: SecondViewDelegate {
     func setNameFromParam(_ text: String) {
-        nameFromParamLabel.text =  text
-        nameFromParamLabel.isHidden = false
+			secondView.nameFromParamLabel.text = text
+			secondView.nameFromParamLabel.isHidden = false
     }
     
     func setNameFromPersistence(_ text: String) {
-        nameFromPersistenceLabel.text =  text
-        nameFromPersistenceLabel.isHidden = false
+			secondView.nameFromPersistenceLabel.text =  text
+      secondView.nameFromPersistenceLabel.isHidden = false
     }
 }

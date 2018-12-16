@@ -69,7 +69,7 @@ class FirstViewPresenterTest: QuickSpec {
     }
 }
 
-fileprivate class ViewSpy: FirstView {
+fileprivate class ViewSpy: FirstViewDelegate {
     var textFieldHint: String?
     var buttonText: String?
     var errorMessage: String?

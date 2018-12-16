@@ -1,6 +1,6 @@
 import UIKit
 
-protocol FirstView: class {
+protocol FirstViewDelegate: class {
     func setTextFieldHint(_ hint: String)
     func setButtonText(_ text: String)
     func showError(with message: String)
@@ -23,7 +23,7 @@ class FirstViewController: UIViewController {
     }
 }
 
-extension FirstViewController: FirstView {
+extension FirstViewController: FirstViewDelegate {
 
     func setTextFieldHint(_ hint: String) {
         nameTextField.placeholder = hint

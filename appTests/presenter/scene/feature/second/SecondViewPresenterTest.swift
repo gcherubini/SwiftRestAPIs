@@ -77,7 +77,7 @@ class SecondViewPresenterTest: QuickSpec {
 	}
 }
 
-fileprivate class ViewSpy: SecondView {
+fileprivate class ViewSpy: SecondViewDelegate {
     var nameFromParamMessage: String?
     var nameFromPersistenceMessage: String?
     var errorMessage: String?

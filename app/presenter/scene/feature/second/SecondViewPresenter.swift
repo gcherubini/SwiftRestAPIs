@@ -2,13 +2,13 @@ import Foundation
 
 class SecondViewPresenter {
     
-    let view: SecondView
+    let view: SecondViewDelegate
 		let githubApi: UrlSessionGithubService
 		let githubMoyaProvider: GithubMoyaProvider
     let persistence: PersistenceService
     var nameFromParam: String?
     
-		init(githubApi: UrlSessionGithubService, githubMoyaProvider: GithubMoyaProvider, persistence: PersistenceService, view: SecondView, nameFromParam: String?) {
+		init(githubApi: UrlSessionGithubService, githubMoyaProvider: GithubMoyaProvider, persistence: PersistenceService, view: SecondViewDelegate, nameFromParam: String?) {
 				self.githubApi = githubApi
 				self.githubMoyaProvider = githubMoyaProvider
         self.persistence = persistence
@@ -19,7 +19,7 @@ class SecondViewPresenter {
     func load() {
         presentNameFromParam()
         presentNameFromPersistence()
-				loadGithubRepositories()
+				//loadGithubRepositories()
     }
 	
 	

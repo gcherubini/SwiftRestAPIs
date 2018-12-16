@@ -6,11 +6,11 @@ protocol FirstViewPresenterDelegate: class {
 
 class FirstViewPresenter {
     
-    let view: FirstView
+    let view: FirstViewDelegate
     let persistence: PersistenceService
     weak var delegate: FirstViewPresenterDelegate?
     
-    init(persistence: PersistenceService, view: FirstView, delegate: FirstViewPresenterDelegate?) {
+    init(persistence: PersistenceService, view: FirstViewDelegate, delegate: FirstViewPresenterDelegate?) {
         self.persistence = persistence
         self.view = view
         self.delegate = delegate
