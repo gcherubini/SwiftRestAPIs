@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
 
-class SecondView: UIView {
+class FirstView: UIView {
 	
-	@IBOutlet private var contentView: UIView!
-	@IBOutlet weak var nameFromParamLabel: UILabel!
-	@IBOutlet weak var nameFromPersistenceLabel: UILabel!
+	@IBOutlet var contentView: UIView!
+	@IBOutlet weak var input: UITextField!
+	@IBOutlet weak var button: UIButton!
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -18,7 +18,7 @@ class SecondView: UIView {
 	}
 	
 	private func commonInit() {
-		Bundle.main.loadNibNamed("SecondView", owner: self, options: nil)
+		Bundle.main.loadNibNamed("FirstView", owner: self, options: nil)
 		addSubview(contentView)
 		contentView.frame = self.bounds
 	}

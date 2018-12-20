@@ -7,30 +7,29 @@ protocol FirstViewDelegate: class {
 }
 
 class FirstViewController: UIViewController {
+	
+	var presenter: FirstViewPresenter!
+	@IBOutlet weak var firstView: FirstView!
+	
+	override func viewDidLoad() {
+			super.viewDidLoad()
+			firstView.button.addTarget(self, action: #selector(onPrimaryBtnClick), for: .touchUpInside)
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var submitButton: UIButton!
-    
-    var presenter: FirstViewPresenter!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        presenter.load()
-    }
-    
-    @IBAction func onPrimaryBtnClick(_ sender: UIButton) {
-        presenter.persist(userName: nameTextField.text)
-    }
+			presenter.load()
+	}
+	
+	@objc func onPrimaryBtnClick(sender: UIButton!) {
+			presenter.persist(userName: firstView.input.text)
+	}
 }
 
 extension FirstViewController: FirstViewDelegate {
 
-    func setTextFieldHint(_ hint: String) {
-        nameTextField.placeholder = hint
-    }
-    
-    func setButtonText(_ text: String) {
-        submitButton.setTitle(text, for: .normal)
-    }
-    
+	func setTextFieldHint(_ hint: String) {
+			firstView.input.placeholder = hint
+	}
+	
+	func setButtonText(_ text: String) {
+			firstView.button.setTitle(text, for: .normal)
+	}
 }

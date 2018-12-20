@@ -12,10 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondView" customModule="app" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="vNF-G6-gC7"/>
-                <outlet property="nameFromParamLabel" destination="4K3-Kn-gTO" id="gmx-9G-wmn"/>
-                <outlet property="nameFromPersistenceLabel" destination="NH0-46-XvC" id="7mG-fm-g4d"/>
-                <outlet property="welcomeLabel" destination="yey-uL-MyT" id="KV5-bj-ziG"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="sts-Ch-MdW"/>
+                <outlet property="nameFromParamLabel" destination="4K3-Kn-gTO" id="BNb-p3-cg3"/>
+                <outlet property="nameFromPersistenceLabel" destination="NH0-46-XvC" id="Ctl-4N-8OK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

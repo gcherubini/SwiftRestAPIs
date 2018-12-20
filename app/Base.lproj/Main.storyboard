@@ -18,34 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sid-bS-gMJ">
-                                <rect key="frame" x="16" y="248.5" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnH-1C-gNa">
-                                <rect key="frame" x="163" y="328.5" width="49" height="30"/>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <action selector="onPrimaryBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X3V-eQ-Jde"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC7-sO-Hb4" customClass="FirstView" customModule="app" customModuleProvider="target">
+                                <rect key="frame" x="26" y="59" width="323" height="569"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fnH-1C-gNa" firstAttribute="top" secondItem="sid-bS-gMJ" secondAttribute="bottom" constant="50" id="88V-uA-35G"/>
-                            <constraint firstItem="sid-bS-gMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DJB-4p-vzT"/>
-                            <constraint firstItem="fnH-1C-gNa" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pcW-ww-zWQ"/>
-                            <constraint firstItem="fnH-1C-gNa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xwx-qJ-oMS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sid-bS-gMJ" secondAttribute="trailing" constant="16" id="zhg-ln-Y4S"/>
+                            <constraint firstItem="tC7-sO-Hb4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="71I-Bh-XA8"/>
+                            <constraint firstItem="tC7-sO-Hb4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LGf-dl-nOn"/>
+                            <constraint firstItem="tC7-sO-Hb4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fEV-w5-QoH"/>
+                            <constraint firstItem="tC7-sO-Hb4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="yu9-H2-KTv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fWV-8z-giR"/>
                     <connections>
-                        <outlet property="nameTextField" destination="sid-bS-gMJ" id="ZDc-Wg-hf0"/>
-                        <outlet property="submitButton" destination="fnH-1C-gNa" id="L7h-4W-yg3"/>
+                        <outlet property="firstView" destination="tC7-sO-Hb4" id="C9Q-a0-eLJ"/>
                         <segue destination="oSN-Ep-aCg" kind="custom" identifier="FirstSceneSegue" id="lY0-F5-Kb1"/>
                     </connections>
                 </viewController>
@@ -78,7 +67,7 @@
                         <viewLayoutGuide key="safeArea" id="bt3-RY-uQU"/>
                     </view>
                     <connections>
-                        <outlet property="secondView" destination="TOS-PC-CPd" id="kxh-zx-KYr"/>
+                        <outlet property="secondView" destination="TOS-PC-CPd" id="X1C-XS-yCI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDh-St-02z" userLabel="First Responder" sceneMemberID="firstResponder"/>
