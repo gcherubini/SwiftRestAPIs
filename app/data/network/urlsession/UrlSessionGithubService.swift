@@ -14,8 +14,6 @@ class UrlSessionGithubService {
 	private let decoder: JSONDecoder
 	private var dataTask: URLSessionDataTask?
 	
-	let repositoriesVariable = Variable([])
-	
 	init() {
 		session = URLSession(configuration: .default)
 		/*.default: Creates a default configuration object that uses the disk-persisted global cache, credential and cookie storage objects.
@@ -24,7 +22,9 @@ class UrlSessionGithubService {
 		decoder = JSONDecoder()
 	}
 	
-	func getRepos(userName: String) {
+	func getRepos(userName: String) -> Observable<[RepositoryOutput]> {
+		let repositoriesVariable = Variable([RepositoryOutput]())
+
 		let endpoint = GithubAPIEndpoint.repos(userName: userName).path
 		print("GithubService - getRepos for: \(userName)")
 		print(endpoint)
@@ -33,7 +33,7 @@ class UrlSessionGithubService {
 
 		if var urlComponents = URLComponents(string: endpoint) {
 			guard let url = urlComponents.url else {
-				return
+				return repositoriesVariable.asObservable()
 			}
 			
 			dataTask = session.dataTask(with: url) { data, response, error in
@@ -58,7 +58,7 @@ class UrlSessionGithubService {
 					do {
 						let repositories = try self.decoder.decode([RepositoryOutput].self, from: data)
 						//print("GithubService - Repositories: \(repositories)")
-						self.repositoriesVariable.value = repositories
+					  repositoriesVariable.value = repositories
 						
 						//Get back to the main queue
 						DispatchQueue.main.async {
@@ -71,5 +71,7 @@ class UrlSessionGithubService {
 		
 			dataTask?.resume()
 		}
+		
+		return repositoriesVariable.asObservable()
 	}
 }

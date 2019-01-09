@@ -17,33 +17,29 @@ class SecondViewPresenter {
     }
     
     func load() {
-				observeRepositories()
 				loadGithubRepositories(with: nameFromParam)
     }
-	
-		private func observeRepositories() {
-			githubApi.repositoriesVariable.asObservable()
-				// If the code is updating the UI all changes needs to be made in the main tread.
-				// To make sure the completion block is run in the UIThread: MainScheduler.instance
-				.observeOn(MainScheduler.instance)
-				.subscribe(onNext: { [weak self] repositories in
-					print("--> \(repositories)")
-					
-					self?.view.populateRepos([
-						Repository(name: "Repo One"),
-						Repository(name: "Repo Two")
-						]
-					)
-				})
-			//.disposed(by: disposeBag)
-		}
 	
 		private func loadGithubRepositories(with userName: String?) {
 			guard let userName = userName, !userName.isEmpty else {
 				return
 			}
 			
-			githubApi.getRepos(userName: userName)
 			//githubMoyaProvider.getRepos(userName: userName)
+
+			githubApi.getRepos(userName: userName)
+				// If the code is updating the UI all changes needs to be made in the main tread.
+				// To make sure the completion block is run in the UIThread: MainScheduler.instance
+				.observeOn(MainScheduler.instance)
+				.map { reposOutput in
+					reposOutput.map {
+						Repository(name: $0.name)
+					}
+				}
+				.subscribe(onNext: { [weak self] repositories in
+					print("--> \(repositories)")
+					self?.view.populateRepos(repositories)
+				})
+			//.disposed(by: disposeBag)
 		}
 }
