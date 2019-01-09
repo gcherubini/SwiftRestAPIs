@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import RxSwift
 
 class UrlSessionGithubService {
 	private let session: URLSession
 	private let decoder: JSONDecoder
 	private var dataTask: URLSessionDataTask?
+	
+	let repositoriesVariable = Variable([])
 	
 	init() {
 		session = URLSession(configuration: .default)
@@ -53,8 +56,9 @@ class UrlSessionGithubService {
 					print("GithubService - 200 OK")
 					
 					do {
-						let repository = try self.decoder.decode([RepositoryOutput].self, from: data)
-						print("GithubService - Repositories: \(repository)")
+						let repositories = try self.decoder.decode([RepositoryOutput].self, from: data)
+						//print("GithubService - Repositories: \(repositories)")
+						self.repositoriesVariable.value = repositories
 						
 						//Get back to the main queue
 						DispatchQueue.main.async {

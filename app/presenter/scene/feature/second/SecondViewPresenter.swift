@@ -1,4 +1,6 @@
 import Foundation
+import RxSwift
+import RxCocoa
 
 class SecondViewPresenter {
     
@@ -19,11 +21,11 @@ class SecondViewPresenter {
     func load() {
         presentNameFromParam()
         presentNameFromPersistence()
-				//loadGithubRepositories()
+				observeRepositories()
+				loadGithubRepositories(with: nameFromParam)
     }
 	
-	
-		func presentNameFromParam() {
+		private func presentNameFromParam() {
         guard let nameFromParam = nameFromParam, !nameFromParam.isEmpty else {
             view.showError(with: "Error getting user name from param")
             return
@@ -33,7 +35,7 @@ class SecondViewPresenter {
         view.setNameFromParam(message)
     }
 	
-    func presentNameFromPersistence() {
+    private func presentNameFromPersistence() {
         guard let nameFromPersistence = persistence.getUserName(), !nameFromPersistence.isEmpty else {
             view.showError(with: "Error getting user name from persistence")
             return
@@ -43,12 +45,23 @@ class SecondViewPresenter {
         view.setNameFromPersistence(message)
     }
 	
-		func loadGithubRepositories() {
-			guard let username = nameFromParam, !username.isEmpty else {
+		private func loadGithubRepositories(with userName: String?) {
+			guard let userName = userName, !userName.isEmpty else {
 				return
 			}
 			
-			githubApi.getRepos(userName: username)
-			githubMoyaProvider.getRepos(userName: username)
+			githubApi.getRepos(userName: userName)
+			//githubMoyaProvider.getRepos(userName: userName)
+		}
+	
+		private func observeRepositories() {
+			githubApi.repositoriesVariable.asObservable()
+				// If the code is updating the UI all changes needs to be made in the main tread.
+				// To make sure the completion block is run in the UIThread: MainScheduler.instance
+				.observeOn(MainScheduler.instance)
+				.subscribe(onNext: { repositories in
+					print("--> \(repositories)")
+				})
+				//.disposed(by: disposeBag)
 		}
 }

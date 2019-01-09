@@ -1,3 +1,4 @@
 github "Quick/Quick"
 github "Quick/Nimble"
 github "Moya/Moya"
+github "ReactiveX/RxSwift" ~> 4.0

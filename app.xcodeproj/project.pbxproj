@@ -36,6 +36,9 @@
 		798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */; };
 		79A9F6BA215D8D1900B6929D /* UIWindowSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */; };
 		79A9F6D0215D902E00B6929D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6CF215D902E00B6929D /* Coordinator.swift */; };
+		79AA7E2421E5839A00177637 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 79AA7E0F21E5839A00177637 /* Cartfile */; };
+		79AA7E2721E5883000177637 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AA7E2521E5883000177637 /* RxSwift.framework */; };
+		79AA7E2821E5883000177637 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79AA7E2621E5883000177637 /* RxCocoa.framework */; };
 		79BD22EC206296F200B1E39C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BD22EB206296F200B1E39C /* SecondViewController.swift */; };
 		79CC577820977859001347A1 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CC577720977859001347A1 /* NavigationControllerMock.swift */; };
 		79D341132061B9FB002B1B43 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D341042061B9F1002B1B43 /* Quick.framework */; };
@@ -227,6 +230,9 @@
 		798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
 		79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowSpy.swift; sourceTree = "<group>"; };
 		79A9F6CF215D902E00B6929D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		79AA7E0F21E5839A00177637 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		79AA7E2521E5883000177637 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		79AA7E2621E5883000177637 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		79BD22EB206296F200B1E39C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		79CC577720977859001347A1 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		79D340EB2061B9F1002B1B43 /* Quick.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Quick.xcodeproj; path = Carthage/Checkouts/Quick/Quick.xcodeproj; sourceTree = "<group>"; };
@@ -244,6 +250,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79AA7E2721E5883000177637 /* RxSwift.framework in Frameworks */,
+				79AA7E2821E5883000177637 /* RxCocoa.framework in Frameworks */,
 				792C1C9821AC9EFA00F19ECF /* Result.framework in Frameworks */,
 				792C1C9121AC975A00F19ECF /* Moya.framework in Frameworks */,
 				792C1C9221AC975A00F19ECF /* Alamofire.framework in Frameworks */,
@@ -369,6 +377,7 @@
 				796ED97D20618D4D0041A4BE /* app */,
 				796ED99220618D4D0041A4BE /* appTests */,
 				796ED99D20618D4D0041A4BE /* appUITests */,
+				79AA7E0F21E5839A00177637 /* Cartfile */,
 				796ED97C20618D4D0041A4BE /* Products */,
 				79D340EA2061B9F0002B1B43 /* Frameworks */,
 			);
@@ -467,6 +476,8 @@
 		79D340EA2061B9F0002B1B43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79AA7E2621E5883000177637 /* RxCocoa.framework */,
+				79AA7E2521E5883000177637 /* RxSwift.framework */,
 				792C1C9721AC9EFA00F19ECF /* Result.framework */,
 				792C1C9021AC975A00F19ECF /* Alamofire.framework */,
 				792C1C7B21AC975A00F19ECF /* Moya.framework */,
@@ -800,6 +811,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79AA7E2421E5839A00177637 /* Cartfile in Resources */,
 				796ED98920618D4D0041A4BE /* LaunchScreen.storyboard in Resources */,
 				796ED98620618D4D0041A4BE /* Assets.xcassets in Resources */,
 				79E867E621CBC51F00B2F9E2 /* FirstView.xib in Resources */,
@@ -836,6 +848,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -843,6 +857,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
