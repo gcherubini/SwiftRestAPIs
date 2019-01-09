@@ -2,8 +2,7 @@ import UIKit
 
 
 protocol SecondViewDelegate: class {
-    func setNameFromParam(_ text: String)
-    func setNameFromPersistence(_ text: String)
+    func populateRepos(_ repos: [Repository])
     func showError(with message: String)
 }
 
@@ -19,13 +18,7 @@ class SecondViewController: UIViewController {
 }
 
 extension SecondViewController: SecondViewDelegate {
-	func setNameFromParam(_ text: String) {
-		secondView.nameFromParamLabel.text = text
-		secondView.nameFromParamLabel.isHidden = false
-	}
-	
-	func setNameFromPersistence(_ text: String) {
-		secondView.nameFromPersistenceLabel.text =  text
-		secondView.nameFromPersistenceLabel.isHidden = false
+	func populateRepos(_ repos: [Repository]) {
+		secondView.loadRepos(with: repos)
 	}
 }

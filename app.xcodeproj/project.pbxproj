@@ -34,6 +34,9 @@
 		79815A042087D73A00CBF8A2 /* SecondViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */; };
 		79815A082087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */; };
 		798ADD84208A9C5000966E84 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */; };
+		79A657CB21E65D6C006DB00D /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A657CA21E65D6B006DB00D /* Repository.swift */; };
+		79A657D221E6682C006DB00D /* SecondViewTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A657D021E6682C006DB00D /* SecondViewTableCell.swift */; };
+		79A657D321E6682C006DB00D /* SecondViewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79A657D121E6682C006DB00D /* SecondViewTableCell.xib */; };
 		79A9F6BA215D8D1900B6929D /* UIWindowSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */; };
 		79A9F6D0215D902E00B6929D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A9F6CF215D902E00B6929D /* Coordinator.swift */; };
 		79AA7E2421E5839A00177637 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 79AA7E0F21E5839A00177637 /* Cartfile */; };
@@ -228,6 +231,9 @@
 		79815A032087D73A00CBF8A2 /* SecondViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewPresenterTest.swift; sourceTree = "<group>"; };
 		79815A072087FA9200CBF8A2 /* FeatureSceneFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSceneFactoryTest.swift; sourceTree = "<group>"; };
 		798ADD6F208A9C5000966E84 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
+		79A657CA21E65D6B006DB00D /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		79A657D021E6682C006DB00D /* SecondViewTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewTableCell.swift; sourceTree = "<group>"; };
+		79A657D121E6682C006DB00D /* SecondViewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewTableCell.xib; sourceTree = "<group>"; };
 		79A9F6B9215D8D1900B6929D /* UIWindowSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindowSpy.swift; sourceTree = "<group>"; };
 		79A9F6CF215D902E00B6929D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		79AA7E0F21E5839A00177637 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
@@ -338,6 +344,8 @@
 				798159E82087B4D300CBF8A2 /* SecondViewPresenter.swift */,
 				7917940F21C6AFDF00298002 /* SecondView.swift */,
 				7917942521C6B15500298002 /* SecondView.xib */,
+				79A657D021E6682C006DB00D /* SecondViewTableCell.swift */,
+				79A657D121E6682C006DB00D /* SecondViewTableCell.xib */,
 			);
 			path = second;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				798159E32086B29600CBF8A2 /* data */,
+				79A657B421E65D51006DB00D /* domain */,
 				7964142A20629D4600C9748D /* presenter */,
 				796ED97E20618D4D0041A4BE /* AppDelegate.swift */,
 				796ED98220618D4D0041A4BE /* Main.storyboard */,
@@ -462,6 +471,22 @@
 				79E88CD920ED02A100663710 /* second */,
 			);
 			path = feature;
+			sourceTree = "<group>";
+		};
+		79A657B421E65D51006DB00D /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				79A657C921E65D5B006DB00D /* model */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		79A657C921E65D5B006DB00D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				79A657CA21E65D6B006DB00D /* Repository.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		79CC576220977844001347A1 /* mock */ = {
@@ -813,6 +838,7 @@
 			files = (
 				79AA7E2421E5839A00177637 /* Cartfile in Resources */,
 				796ED98920618D4D0041A4BE /* LaunchScreen.storyboard in Resources */,
+				79A657D321E6682C006DB00D /* SecondViewTableCell.xib in Resources */,
 				796ED98620618D4D0041A4BE /* Assets.xcassets in Resources */,
 				79E867E621CBC51F00B2F9E2 /* FirstView.xib in Resources */,
 				7917942621C6B15500298002 /* SecondView.xib in Resources */,
@@ -891,10 +917,12 @@
 				798159E72087B29A00CBF8A2 /* ViewControllerExtensions.swift in Sources */,
 				79BD22EC206296F200B1E39C /* SecondViewController.swift in Sources */,
 				7964F74421A5AE29004E2C94 /* UrlSessionGithubService.swift in Sources */,
+				79A657D221E6682C006DB00D /* SecondViewTableCell.swift in Sources */,
 				792C1C9421AC998700F19ECF /* GithubMoyaProvider.swift in Sources */,
 				79245E1121A64D9B0044416A /* GithubAPIEndpoint.swift in Sources */,
 				7935CF9D21A6E73D0031B58F /* GithubMoyaTarget.swift in Sources */,
 				798159CE2086B28E00CBF8A2 /* PersistenceService.swift in Sources */,
+				79A657CB21E65D6C006DB00D /* Repository.swift in Sources */,
 				7964F74621A5B354004E2C94 /* RepositoryOutput.swift in Sources */,
 				79E0D4A72086AA9600C7B804 /* FeatureCoordinator.swift in Sources */,
 				796ED98120618D4D0041A4BE /* FirstViewController.swift in Sources */,
@@ -1089,7 +1117,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1107,7 +1135,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
